@@ -10,12 +10,13 @@ namespace backend\controllers;
 
 
 use yii\web\Controller;
-
+use backend\models\Admin;
 class PublicController extends Controller
 {
     public $layout ="layout2";
     public function actionLogin(){
-        return $this->render('login');
+        $model = new Admin;
+        return $this->render("login",['model' => $model]);
     }
 
     public function actionSeekpassword(){

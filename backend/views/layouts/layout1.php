@@ -302,8 +302,8 @@ AppAsset::register($this);
 <script src="assets/admin/js/bootstrap-wysihtml5-0.0.2.js"></script>
 
 <script type="text/javascript">
-    $(function () {
 
+    $(function () {
         // jQuery Knobs
         $(".knob").knob();
 
