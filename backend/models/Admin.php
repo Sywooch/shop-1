@@ -8,6 +8,7 @@ class Admin extends ActiveRecord
     public $adminuser;
     public $adminpass;
     public $adminemail;
+    public $repass;
     public $rememberMe = true;
     public static function tableName()
     {
@@ -67,8 +68,9 @@ class Admin extends ActiveRecord
     public function seekPass($data){
         $this->scenario = 'seekpass';
         if($this->load($data) && $this->validateEmail()){
-            //做点有意义的事情
-            $mailer = Yii::$app->mailer->compose('seekpass',['adminuser'=>$data['Admin']['adminuser']]);
+            $time = time();
+            $token = $this->createToken($data['Admin']['adminuser'],$time);
+            $mailer = Yii::$app->mailer->compose('seekpass',['adminuser'=>$data['Admin']['adminuser'],'time'=>$time,'token'=>$token]);
             $mailer->setFrom("evil3344@sina.com");
             $mailer->setTo($data['Admin']['adminemail']);
             $mailer->setSubject("immoc-shop：找回密码");
@@ -77,5 +79,8 @@ class Admin extends ActiveRecord
             }
         }
         return false;
+    }
+    public function createToken($adminuser,$time){
+        return md5(md5($adminuser).base64_encode(Yii::$app->request->userIP).md5($time));
     }
 }
