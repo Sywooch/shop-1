@@ -27,7 +27,14 @@ class PublicController extends Controller
     }
 
     public function actionSeekpassword(){
-        return $this->render('seekpassword');
+        $model = new Admin;
+        if(Yii::$app->request->isPost){
+            $post = Yii::$app->request->post();
+            if($model->seekPass($post)){
+                Yii::$app->session->setFlash('info','电子邮件发送成功，请查收');
+            }
+        }
+        return $this->render('seekpassword',['model'=>$model]);
     }
     public function actionLogout(){
         Yii::$app->session->removeAll();
@@ -38,4 +45,5 @@ class PublicController extends Controller
             $this->goBack();
         }
     }
+
 }
