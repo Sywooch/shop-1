@@ -9,6 +9,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use common\widgets\Alert;
+use yii\helpers\Url;
 
 AppAsset::register($this);
 ?>
@@ -21,26 +22,27 @@ AppAsset::register($this);
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- bootstrap -->
-    <link href="assets/admin/css/bootstrap/bootstrap.css" rel="stylesheet" />
-    <link href="assets/admin/css/bootstrap/bootstrap-responsive.css" rel="stylesheet" />
-    <link href="assets/admin/css/bootstrap/bootstrap-overrides.css" type="text/css" rel="stylesheet" />
+    <link href="assets/css/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="assets/css/bootstrap/bootstrap-overrides.css" type="text/css" rel="stylesheet" />
 
     <!-- libraries -->
-    <link href="assets/admin/css/lib/jquery-ui-1.10.2.custom.css" rel="stylesheet" type="text/css" />
-    <link href="assets/admin/css/lib/font-awesome.css" type="text/css" rel="stylesheet" />
+    <link href="assets/css/lib/jquery-ui-1.10.2.custom.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/lib/font-awesome.css" type="text/css" rel="stylesheet" />
 
     <!-- global styles -->
-    <link rel="stylesheet" type="text/css" href="assets/admin/css/layout.css" />
-    <link rel="stylesheet" type="text/css" href="assets/admin/css/elements.css" />
-    <link rel="stylesheet" type="text/css" href="assets/admin/css/icons.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/layout.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/elements.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/icons.css" />
 
     <!-- this page specific styles -->
-    <link rel="stylesheet" href="assets/admin/css/compiled/index.css" type="text/css" media="screen" />
-    <link href="assets/admin/css/lib/bootstrap-wysihtml5.css" type="text/css" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/admin/css/compiled/form-showcase.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="assets/css/compiled/index.css" type="text/css" media="screen" />
+
     <!-- open sans font -->
+    <link href='http://fonts.useso.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css' />
 
     <!-- lato font -->
+    <link href='http://fonts.useso.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css' />
 
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -114,7 +116,7 @@ AppAsset::register($this);
                         <a href="#" class="close-icon"><i class="icon-remove-sign"></i></a>
                         <div class="messages">
                             <a href="#" class="item">
-                                <img src="assets/admin/img/contact-img.png" class="display" />
+                                <img src="assets/img/contact-img.png" class="display" />
                                 <div class="name">Alejandra Galván</div>
                                 <div class="msg">
                                     There are many variations of available, but the majority have suffered alterations.
@@ -122,7 +124,7 @@ AppAsset::register($this);
                                 <span class="time"><i class="icon-time"></i> 13 min.</span>
                             </a>
                             <a href="#" class="item">
-                                <img src="assets/admin/img/contact-img2.png" class="display" />
+                                <img src="assets/img/contact-img2.png" class="display" />
                                 <div class="name">Alejandra Galván</div>
                                 <div class="msg">
                                     There are many variations of available, have suffered alterations.
@@ -130,7 +132,7 @@ AppAsset::register($this);
                                 <span class="time"><i class="icon-time"></i> 26 min.</span>
                             </a>
                             <a href="#" class="item last">
-                                <img src="assets/admin/img/contact-img.png" class="display" />
+                                <img src="assets/img/contact-img.png" class="display" />
                                 <div class="name">Alejandra Galván</div>
                                 <div class="msg">
                                     There are many variations of available, but the majority have suffered alterations.
@@ -150,8 +152,8 @@ AppAsset::register($this);
                     <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a href="">个人信息管理</a></li>
-                    <li><a href="">修改密码</a></li>
+                    <li><a href="personal-info.html">个人信息管理</a></li>
+                    <li><a href="#">修改密码</a></li>
                     <li><a href="#">订单管理</a></li>
                 </ul>
             </li>
@@ -161,7 +163,7 @@ AppAsset::register($this);
                 </a>
             </li>
             <li class="settings hidden-phone">
-                <a href="<?php echo yii\helpers\Url::to(['public/logout']) ?>" role="button">
+                <a href="<?php echo Url::to(['public/logout'])?>" role="button">
                     <i class="icon-share-alt"></i>
                 </a>
             </li>
@@ -184,17 +186,11 @@ AppAsset::register($this);
             </a>
         </li>
         <li>
-            <a class="dropdown-toggle" href="#">
-                <i class="icon-user"></i>
-                <span>管理员管理</span>
-                <i class="icon-chevron-down"></i>
+            <a href="chart-showcase.html">
+                <i class="icon-signal"></i>
+                <span>统计</span>
             </a>
-            <ul class="submenu">
-                <li><a href="">管理员列表</a></li>
-                <li><a href="">加入新管理员</a></li>
-            </ul>
         </li>
-
         <li>
             <a class="dropdown-toggle" href="#">
                 <i class="icon-group"></i>
@@ -202,108 +198,72 @@ AppAsset::register($this);
                 <i class="icon-chevron-down"></i>
             </a>
             <ul class="submenu">
-                <li><a href="">用户列表</a></li>
-                <li><a href="">加入新用户</a></li>
-            </ul>
-        </li>
-        <li>
-            <a class="dropdown-toggle" href="#">
-                <i class="icon-list"></i>
-                <span>分类管理</span>
-                <i class="icon-chevron-down"></i>
-            </a>
-            <ul class="submenu">
-                <li><a href="">分类列表</a></li>
-                <li><a href="">加入分类</a></li>
-            </ul>
-        </li>
-        <li>
-            <a class="dropdown-toggle" href="#">
-                <i class="icon-glass"></i>
-                <span>商品管理</span>
-                <i class="icon-chevron-down"></i>
-            </a>
-            <ul class="submenu">
-                <li><a href="">商品列表</a></li>
-                <li><a href="">添加商品</a></li>
+                <li><a href="user-list.html">用户列表</a></li>
+                <li><a href="new-user.html">加入新用户</a></li>
+                <li><a href="user-profile.html">用户信息</a></li>
             </ul>
         </li>
         <li>
             <a class="dropdown-toggle" href="#">
                 <i class="icon-edit"></i>
-                <span>订单管理</span>
+                <span>表单</span>
                 <i class="icon-chevron-down"></i>
             </a>
             <ul class="submenu">
-                <li><a href="">订单列表</a></li>
+                <li><a href="form-showcase.html">基本表单</a></li>
+                <li><a href="form-wizard.html">步骤表单</a></li>
             </ul>
         </li>
+        <li>
+            <a href="gallery.html">
+                <i class="icon-picture"></i>
+                <span>相册管理</span>
+            </a>
+        </li>
+        <li>
+            <a href="calendar.html">
+                <i class="icon-calendar-empty"></i>
+                <span>日历事件管理</span>
+            </a>
+        </li>
+        <li>
+            <a href="tables.html">
+                <i class="icon-th-large"></i>
+                <span>表格</span>
+            </a>
+        </li>
 
+        <li>
+            <a href="personal-info.html">
+                <i class="icon-cog"></i>
+                <span>我的信息</span>
+            </a>
+        </li>
 
     </ul>
 </div>
 <!-- end sidebar -->
 
+<!-- end sidebar -->
+
 <?php $this->beginBody() ?>
-
-<div class="wrap">
-<!--    --><?php
-//    NavBar::begin([
-//        'brandLabel' => 'My Company',
-//        'brandUrl' => Yii::$app->homeUrl,
-//        'options' => [
-//            'class' => 'navbar-inverse navbar-fixed-top',
-//        ],
-//    ]);
-//    $menuItems = [
-//        ['label' => 'Home', 'url' => ['/site/index']],
-//    ];
-//    if (Yii::$app->user->isGuest) {
-//        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-//    } else {
-//        $menuItems[] = '<li>'
-//            . Html::beginForm(['/site/logout'], 'post')
-//            . Html::submitButton(
-//                'Logout (' . Yii::$app->user->identity->username . ')',
-//                ['class' => 'btn btn-link']
-//            )
-//            . Html::endForm()
-//            . '</li>';
-//    }
-//    echo Nav::widget([
-//        'options' => ['class' => 'navbar-nav navbar-right'],
-//        'items' => $menuItems,
-//    ]);
-//    NavBar::end();
-//    ?>
-
-    <div class="container">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
-        <?= Alert::widget() ?>
         <?= $content ?>
-    </div>
-</div>
-
 
 <!-- scripts -->
-<script src="assets/admin/js/jquery-latest.js"></script>
-<script src="assets/admin/js/bootstrap.min.js"></script>
-<script src="assets/admin/js/jquery-ui-1.10.2.custom.min.js"></script>
+<script src="assets/js/jquery-latest.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery-ui-1.10.2.custom.min.js"></script>
 <!-- knob -->
-<script src="assets/admin/js/jquery.knob.js"></script>
+<script src="assets/js/jquery.knob.js"></script>
 <!-- flot charts -->
-<script src="assets/admin/js/jquery.flot.js"></script>
-<script src="assets/admin/js/jquery.flot.stack.js"></script>
-<script src="assets/admin/js/jquery.flot.resize.js"></script>
-<script src="assets/admin/js/theme.js"></script>
-<script src="assets/admin/js/wysihtml5-0.3.0.js"></script>
-<script src="assets/admin/js/bootstrap-wysihtml5-0.0.2.js"></script>
+<script src="assets/js/jquery.flot.js"></script>
+<script src="assets/js/jquery.flot.stack.js"></script>
+<script src="assets/js/jquery.flot.resize.js"></script>
+<script src="assets/js/theme.js"></script>
 
 <script type="text/javascript">
-
     $(function () {
+
         // jQuery Knobs
         $(".knob").knob();
 
@@ -413,15 +373,6 @@ AppAsset::register($this);
             }
         });
     });
-    $(".wysihtml5").wysihtml5({
-        "font-styles": false
-    });
-    $("#addpic").click(function(){
-        var pic = $("#product-pics").clone();
-        pic.attr("style", "margin-left:120px");
-        $("#product-pics").parent().append(pic);
-    });
-
 </script>
 
 <?php $this->endBody() ?>

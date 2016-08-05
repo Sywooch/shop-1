@@ -1,14 +1,3 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Edwin
- * Date: 2016/8/3
- * Time: 20:23
- */
-?>
-
-
-
 <!-- main container -->
 <div class="content">
 
@@ -68,7 +57,7 @@
             <!-- end statistics chart -->
 
             <!-- table sample -->
-            <!-- the script for the toggle all checkboxes from header is located in js/theme.js -->
+            <!-- the script for the toggle all checkboxes from header is located in assets/js/theme.js -->
             <div class="table-products section">
                 <div class="row-fluid head">
                     <div class="span12">
@@ -112,7 +101,7 @@
                             <td>
                                 <input type="checkbox" />
                                 <div class="img">
-                                    <img src="assets/admin/img/table-img.png" />
+                                    <img src="assets/img/table-img.png" />
                                 </div>
                                 <a href="#">There are many variations </a>
                             </td>
@@ -133,7 +122,7 @@
                             <td>
                                 <input type="checkbox" />
                                 <div class="img">
-                                    <img src="assets/admin/img/table-img.png" />
+                                    <img src="assets/img/table-img.png" />
                                 </div>
                                 <a href="#">Internet tend</a>
                             </td>
@@ -153,7 +142,7 @@
                             <td>
                                 <input type="checkbox" />
                                 <div class="img">
-                                    <img src="assets/admin/img/table-img.png" />
+                                    <img src="assets/img/table-img.png" />
                                 </div>
                                 <a href="#">Many desktop publishing </a>
                             </td>
@@ -173,7 +162,7 @@
                             <td>
                                 <input type="checkbox" />
                                 <div class="img">
-                                    <img src="assets/admin/img/table-img.png" />
+                                    <img src="assets/img/table-img.png" />
                                 </div>
                                 <a href="#">Generate Lorem </a>
                             </td>
@@ -194,7 +183,7 @@
                             <td>
                                 <input type="checkbox" />
                                 <div class="img">
-                                    <img src="assets/admin/img/table-img.png" />
+                                    <img src="assets/img/table-img.png" />
                                 </div>
                                 <a href="#">Internet tend</a>
                             </td>
