@@ -14,3 +14,4 @@ CREATE TABLE IF NOT EXISTS `shop_admin`
 )ENGINE =InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `shop_admin`(adminid,adminuser,adminpass,adminemail) VALUE (1,'root',md5('root'),'evil3344@sina.com');
+INSERT INTO `shop_admin`(adminid,adminuser,adminpass,adminemail) VALUE (2,'admin',md5('admin'),'evil3344@sina.com');

@@ -205,6 +205,17 @@ AppAsset::register($this);
         </li>
         <li>
             <a class="dropdown-toggle" href="#">
+                <i class="icon-user"></i>
+                <span>管理员管理</span>
+                <i class="icon-chevron-down"></i>
+            </a>
+            <ul class="submenu">
+                <li><a href="<?=yii\helpers\Url::to(['manage/managers'])?>">管理员列表</a></li>
+                <li><a href="<?=yii\helpers\Url::to(['manage\reg'])?>">加入新管理员</a></li>
+            </ul>
+        </li>
+        <li>
+            <a class="dropdown-toggle" href="#">
                 <i class="icon-edit"></i>
                 <span>表单</span>
                 <i class="icon-chevron-down"></i>

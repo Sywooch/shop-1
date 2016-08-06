@@ -30,21 +30,28 @@ class ManageController extends Controller
         $token = Yii::$app->request->get("token");
         $model = new Admin;
         $myToken = $model->createToken($adminuser,$time);
-        if ($token!= $myToken){
-            $this->redirect('public/login');
-            Yii::$app->end();
-        }
-        if(time() - $time > 300){
-            $this->redirect('public/login');
-            Yii::$app->end();
+//        if ($token!= $myToken){
+//            $this->redirect('public/login');
+//            Yii::$app->end();
+//        }
+//        if(time() - $time > 300){
+//            $this->redirect('public/login');
+//            Yii::$app->end();
+//        }
+        if(Yii::$app->request->isPost){
+            $post = Yii::$app->request->post();
+            if($model->changePass($post)){
+                Yii::$app->session->setFlash('info','密码修改成功');
+            }
         }
         $model->adminuser = $adminuser;
         return $this->render('mailchangepass',['model'=>$model]);
     }
 
     public function actionManagers(){
-        $this->layout = 'layout2';
-        return $this->render('managers');
+        $managers = Admin::find()->all();
+        var_dump($managers);
+        return $this->render('managers',['managers'=>$managers]);
     }
 
     public function actionReg(){

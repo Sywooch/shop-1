@@ -7,21 +7,55 @@
  */
 ?>
 
-
-<div class="row-fluid login-wrapper">
-    <a class="brand" href=""></a>
-    <form>
-        <div class="span4 box">
-            <div class="content-wrap">
-                <h6>慕课商城 - 修改密码</h6>
-                <input type="hidden" name="adminuser">
-                <input type="password" class="span12" placeholder="新密码">
-                <input type="password" class="span12" placeholder="确认密码">
-                <a href="" class="forgot">返回登录</a>
-                <input type="submit" class="btn-glow primary login" value="修改">
+<div class="content">
+    <div class="container-fluid">
+        <div id="pad-wrapper" class="users-list">
+            <div class="row-fluid header">
+                <h3>管理员列表</h3>
+                <div class="span10 pull-right">
+                    <a href="/index.php?r=admin%2Fmanage%2Freg" class="btn-flat success pull-right">
+                        <span>&#43;</span>添加新管理员</a></div>
             </div>
-        </div>
-    </form>
+            <!-- Users table -->
+            <div class="row-fluid table">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th class="span2">管理员ID</th>
+                        <th class="span2">
+                            <span class="line"></span>管理员账号</th>
+                        <th class="span2">
+                            <span class="line"></span>管理员邮箱</th>
+                        <th class="span3">
+                            <span class="line"></span>最后登录时间</th>
+                        <th class="span3">
+                            <span class="line"></span>最后登录IP</th>
+                        <th class="span2">
+                            <span class="line"></span>添加时间</th>
+                        <th class="span2">
+                            <span class="line"></span>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- row -->
+                    <?php foreach($managers as $manager):?>
+                    <tr>
+                        <?php var_dump($manager->adminuser)?>
+                        <td><?=$manager->adminid?></td>
+                        <td><?=$manager->adminuser?></td>
+                        <td><?=$manager->adminemail?></td>
+                        <td><?=date('Y-m-d H:i:s',$manager->logintime)?></td>
+                        <td><?=long2ip($manager->loginip)?></td>
+                        <td><?=date('Y-m-d H:i:s',$manager->creatime)?></td>
+                        <td class="align-right" style="text-align: center">
+                            <a href="/index.php?r=admin%2Fmanage%2Fdel&adminid=1">编辑</a>
+                            <a href="/index.php?r=admin%2Fmanage%2Fdel&adminid=1">删除</a></td>
+                    </tr>
+                    <?php endforeach;?>
+                    </tbody>
+                </table>
+            </div>
+            <div class="pagination pull-right"></div>
+            <!-- end users table --></div>
+    </div>
 </div>
-
-<!-- scripts -->
