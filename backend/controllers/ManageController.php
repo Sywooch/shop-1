@@ -50,7 +50,6 @@ class ManageController extends Controller
 
     public function actionManagers(){
         $managers = Admin::find()->all();
-        var_dump($managers);
         return $this->render('managers',['managers'=>$managers]);
     }
 

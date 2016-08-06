@@ -40,7 +40,6 @@
                     <!-- row -->
                     <?php foreach($managers as $manager):?>
                     <tr>
-                        <?php var_dump($manager->adminuser)?>
                         <td><?=$manager->adminid?></td>
                         <td><?=$manager->adminuser?></td>
                         <td><?=$manager->adminemail?></td>
