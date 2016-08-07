@@ -16,11 +16,27 @@ class ManageController extends Controller
 {
     public $layout = 'layout1';
     public function actionChangeemail(){
-        return $this->render('changeemail');
+        $model = Admin::find()->where('adminuser = :user',[':user'=>Yii::$app->session['admin']['adminuser']])->one();
+        if(Yii::$app->request->isPost){
+            $post = Yii::$app->request->post();
+            if($model->changeEmail($post)){
+                Yii::$app->session->setFlash('info','修改成功');
+            }
+        }
+        return $this->render('changeemail',['model'=>$model]);
     }
 
     public function actionChangepass(){
-        return $this->render('changepass');
+        $model = Admin::find()->where('adminuser = :user',[':user'=>Yii::$app->session['admin']['adminuser']])->one();
+        if(Yii::$app->request->isPost){
+            $post = Yii::$app->request->post();
+            if($model->changePass($post)){
+                Yii::$app->session->setFlash('info','修改成功');
+            }
+        }
+        $model->adminpass = '';
+        $model->repass = '';
+        return $this->render('changepass',['model'=>$model]);
     }
 
     public function actionMailchangepass(){
@@ -30,14 +46,14 @@ class ManageController extends Controller
         $token = Yii::$app->request->get("token");
         $model = new Admin;
         $myToken = $model->createToken($adminuser,$time);
-//        if ($token!= $myToken){
-//            $this->redirect('public/login');
-//            Yii::$app->end();
-//        }
-//        if(time() - $time > 300){
-//            $this->redirect('public/login');
-//            Yii::$app->end();
-//        }
+        if ($token!= $myToken){
+            $this->redirect('public/login');
+            Yii::$app->end();
+        }
+        if(time() - $time > 300){
+            $this->redirect('public/login');
+            Yii::$app->end();
+        }
         if(Yii::$app->request->isPost){
             $post = Yii::$app->request->post();
             if($model->changePass($post)){
@@ -54,7 +70,30 @@ class ManageController extends Controller
     }
 
     public function actionReg(){
-        return $this->render('reg');
+        $model = new Admin();
+        if(Yii::$app->request->isPost){
+            $post = Yii::$app->request->post();
+            if($model->reg($post)){
+                Yii::$app->session->setFlash('info','添加成功');
+            }else{
+                Yii::$app->session->setFlash('info','添加失败');
+            }
+        }
+        $model->adminpass = '';
+        $model->repass = '';
+        return $this->render('reg',['model'=>$model]);
+    }
+
+    public function actionDel(){
+        $adminid = (int)Yii::$app->request->get('adminid');
+        if(empty($adminid)){
+            $this->redirect(['manage/managers']);
+        }
+        $model = new Admin();
+        if($model->deleteAll('adminid = :id',[':id'=>$adminid])){
+            Yii::$app->session->setFlash('info','删除成功');
+            $this->redirect(['manage/managers']);
+        }
     }
 
 }
