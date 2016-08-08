@@ -128,3 +128,4 @@ CREATE TABLE IF NOT EXISTS `shop_address`(
     `userid` BIGINT UNSIGNED NOT NULL DEFAULT '0',
     `createtime` INT UNSIGNED NOT NULL DEFAULT '0',
     KEY shop_address_userid(`userid`)
+)ENGINE=InnoDB DEFAULT CHARSET='utf8';
