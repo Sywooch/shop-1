@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `shop_user`
     PRIMARY KEY(`userid`)
 )ENGINE = InnoDB DEFAULT CHARSET=utf8
 
-INSERT INTO `shop_user`(userid,username,userpass,useremail,createtime) VALUE(1,'test',md5('test','evil3344@sina.com',))
+INSERT INTO `shop_user`(userid,username,userpass,useremail) VALUE(1,'test',md5('test'),'evil3344@sina.com')
 
 
 DROP TABLE IF EXISTS `shop_profile`;
