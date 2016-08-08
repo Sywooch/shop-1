@@ -51,8 +51,8 @@ class MemberController extends Controller
     }
     public function actionQqlogin()
     {
-        require_once($_SERVER['DOCUMENT_ROOT']."/shop/vendor/qqlogin/qqConnectAPI2.php");
-//        $qc = new \QC();
-//        $qc->qq_login();
+        require_once("../../vendor/qqlogin/API/qqConnectAPI.php");
+        $qc = new \QC();
+        $qc->qq_login();
     }
 }
