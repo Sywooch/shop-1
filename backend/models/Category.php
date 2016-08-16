@@ -108,6 +108,4 @@ class Category  extends ActiveRecord
         }
         return $data;
     }
-
-
 }

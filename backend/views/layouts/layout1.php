@@ -226,39 +226,24 @@ AppAsset::register($this);
         </li>
         <li>
             <a class="dropdown-toggle" href="#">
-                <i class="icon-edit"></i>
-                <span>表单</span>
+                <i class="icon-user"></i>
+                <span>商品管理</span>
                 <i class="icon-chevron-down"></i>
             </a>
             <ul class="submenu">
-                <li><a href="form-showcase.html">基本表单</a></li>
-                <li><a href="form-wizard.html">步骤表单</a></li>
+                <li><a href="<?=yii\helpers\Url::to(['product/list'])?>">商品列表</a></li>
+                <li><a href="<?=yii\helpers\Url::to(['product/add'])?>">添加商品</a></li>
             </ul>
         </li>
         <li>
-            <a href="gallery.html">
-                <i class="icon-picture"></i>
-                <span>相册管理</span>
+            <a class="dropdown-toggle" href="#">
+                <i class="icon-user"></i>
+                <span>订单管理</span>
+                <i class="icon-chevron-down"></i>
             </a>
-        </li>
-        <li>
-            <a href="calendar.html">
-                <i class="icon-calendar-empty"></i>
-                <span>日历事件管理</span>
-            </a>
-        </li>
-        <li>
-            <a href="tables.html">
-                <i class="icon-th-large"></i>
-                <span>表格</span>
-            </a>
-        </li>
-
-        <li>
-            <a href="personal-info.html">
-                <i class="icon-cog"></i>
-                <span>我的信息</span>
-            </a>
+            <ul class="submenu">
+                <li><a href="<?=yii\helpers\Url::to(['order/list'])?>">订单列表</a></li>
+            </ul>
         </li>
 
     </ul>
