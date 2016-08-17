@@ -25,7 +25,7 @@ class ProductController extends Controller
         if(Yii::$app->request->isPost){
             $post = Yii::$app->request->post();
             $pics = $this->upload();
-            if(!pics){
+            if(!$pics){
                 $model  ->addError('cover','封面不能为空');
             }else{
                 $post['Product']['cover'] = $pics['cover'];
