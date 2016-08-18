@@ -7,8 +7,11 @@
  */
 
 namespace frontend\controllers;
-use yii\web\Controller;
 
+use common\models\Product;
+use Yii;
+use yii\helpers\ArrayHelper;
+use yii\web\Controller;
 class ProductController extends Controller
 {
     public $layout = "layout3";
@@ -17,6 +20,9 @@ class ProductController extends Controller
         return $this->render("index");
     }
     public function actionDetail(){
-        return $this->render("detail");
+        $productid = Yii::$app->request->get('productid');
+        $product = Product::find()->where('productid = :pid',[':pid'=>$productid])->asArray()->one();
+        $data['all'] = Product::find()->where('ison = "1"')->orderBy('createtime desc')->limit(7)->all();
+        return $this->render("detail",['product'=>$product,'data'=>$data]);
     }
 }

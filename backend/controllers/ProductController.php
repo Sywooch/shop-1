@@ -91,7 +91,6 @@ class ProductController extends Controller
             foreach($_FILES['Product']['tmp_name']['pics'] as $k => $file) {
                 if ($_FILES['Product']['error']['pics'][$k] > 0) {
                     continue;
-
                 }
                 $key = uniqid();
                 $qiniu->uploadfile($file, $key);
@@ -101,7 +100,6 @@ class ProductController extends Controller
             $post['Product']['pics'] = json_encode(array_merge((array)json_decode($model->pics, true), $pics));
             if ($model->load($post) && $model->save()) {
                 Yii::$app->session->setFlash('info', '修改成功');
-
             }
 
         }

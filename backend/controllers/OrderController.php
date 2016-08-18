@@ -8,7 +8,9 @@
 
 namespace backend\controllers;
 
-
+use Yii;
+use frontend\models\Order;
+use yii\data\Pagination;
 use yii\web\Controller;
 
 class OrderController extends Controller
@@ -19,7 +21,13 @@ class OrderController extends Controller
     }
 
     public function actionList(){
-        return $this->render('list');
+        $model = Order::find();
+        $count = $model->count();
+        $pageSize = Yii::$app->params['pageSize']['order'];
+        $pager = new Pagination(['totalCount'=>$count,'pageSize'=>$pageSize]);
+        $data = $model->offset($pager->offset)->limit($pager->limit)->all();
+        $data = Order::getDetail($data);
+        return $this->render('detail',['pager' => $pager, 'orders' => $data]);
     }
 
     public function actionSend(){

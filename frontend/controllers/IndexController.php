@@ -7,14 +7,19 @@
  */
 
 namespace frontend\controllers;
-use yii\web\Controller;
 
-class IndexController extends Controller
+use frontend\controllers\CommonController;
+use common\models\Product;
+class IndexController extends CommonController
 {
     public $layout = false;
 
     public function actionIndex(){
         $this->layout = "layoutIndex";
-        return $this->render("index");
+        $data['tui'] = Product::find()->where('istui = "1" and ison = "1"')->orderby('createtime desc')->limit(4)->all();
+        $data['new'] = Product::find()->where('ison = "1"')->orderby('createtime desc')->limit(4)->all();
+        $data['hot'] = Product::find()->where('ison = "1" and ishot = "1"')->orderby('createtime desc')->limit(4)->all();
+        $data['all'] = Product::find()->where('ison = "1"')->orderby('createtime desc')->limit(7)->all();
+        return $this->render("index", ['data' => $data]);
     }
 }

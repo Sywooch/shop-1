@@ -8,7 +8,9 @@
 
 namespace frontend\controllers;
 
+use Yii;
 use yii\web\Controller;
+use frontend\models\Order;
 class OrderController extends Controller
 {
     public $layout = false;
@@ -26,6 +28,21 @@ class OrderController extends Controller
     public function actionCheck(){
         $this->layout ="layout2";
         return $this->render("check");
+    }
+
+    public function actionAdd(){
+        if(Yii::$app->session['isLogin'] !=1){
+            return $this->redirect(['member/auth']);
+        }
+        $transaction = Yii::$app->db->beginTransaction();
+        try{
+            if(Yii::$app->request->isPost){
+                $post = Yii::$app->request->post();
+                $order = new Order();
+            }
+        }catch (\ErrorException $e){
+
+        }
     }
 
 }

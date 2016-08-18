@@ -15,37 +15,20 @@
                     <div class="head"><i class="fa fa-list"></i> 所有分类 </div>
                     <nav class="yamm megamenu-horizontal" role="navigation">
                         <ul class="nav">
+                            <?php foreach ($this->params['menu'] as $top):?>
                             <li class="dropdown menu-item">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">电子产品</a>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $top['title']?></a>
                                 <ul class="dropdown-menu mega-menu">
                                     <li class="yamm-content">
                                         <!-- ================================== MEGAMENU VERTICAL ================================== -->
                                         <div class="row">
                                             <div class="col-xs-12 col-lg-4">
                                                 <ul>
-                                                    <li><a href="#">Computer Cases &amp; Accessories</a></li>
-                                                    <li><a href="#">CPUs, Processors</a></li>
-                                                    <li><a href="#">Fans, Heatsinks &amp; Cooling</a></li>
-                                                    <li><a href="#">Graphics, Video Cards</a></li>
-                                                    <li><a href="#">Interface, Add-On Cards</a></li>
-                                                    <li><a href="#">Laptop Replacement Parts</a></li>
-                                                    <li><a href="#">Memory (RAM)</a></li>
-                                                    <li><a href="#">Motherboards</a></li>
-                                                    <li><a href="#">Motherboard &amp; CPU Combos</a></li>
-                                                    <li><a href="#">Motherboard Components &amp; Accs</a></li>
+                                                    <?php foreach($top['children'] as $child):?>
+                                                        <li><a href="<?php echo yii\helpers\Url::to(['product/index','cateid'=>$child['cateid']]);?>"><?php echo $child['title']?></a></li>
+                                                    <?php endforeach;?>
                                                 </ul>
                                             </div>
-
-                                            <div class="col-xs-12 col-lg-4">
-                                                <ul>
-                                                    <li><a href="#">Power Supplies Power</a></li>
-                                                    <li><a href="#">Power Supply Testers Sound</a></li>
-                                                    <li><a href="#">Sound Cards (Internal)</a></li>
-                                                    <li><a href="#">Video Capture &amp; TV Tuner Cards</a></li>
-                                                    <li><a href="#">Other</a></li>
-                                                </ul>
-                                            </div>
-
                                             <div class="dropdown-banner-holder">
                                                 <a href="#"><img alt="" src="assets/images/banners/banner-side.png" /></a>
                                             </div>
@@ -54,313 +37,7 @@
                                     </li>
                                 </ul>
                             </li><!-- /.menu-item -->
-                            <li class="dropdown menu-item">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">服装类</a>
-                                <ul class="dropdown-menu mega-menu">
-                                    <li class="yamm-content">
-                                        <!-- ================================== MEGAMENU VERTICAL ================================== -->
-                                        <div class="row">
-                                            <div class="col-xs-12 col-lg-4">
-                                                <ul>
-                                                    <li><a href="#">Computer Cases &amp; Accessories</a></li>
-                                                    <li><a href="#">CPUs, Processors</a></li>
-                                                    <li><a href="#">Fans, Heatsinks &amp; Cooling</a></li>
-                                                    <li><a href="#">Graphics, Video Cards</a></li>
-                                                    <li><a href="#">Interface, Add-On Cards</a></li>
-                                                    <li><a href="#">Laptop Replacement Parts</a></li>
-                                                    <li><a href="#">Memory (RAM)</a></li>
-                                                    <li><a href="#">Motherboards</a></li>
-                                                    <li><a href="#">Motherboard &amp; CPU Combos</a></li>
-                                                    <li><a href="#">Motherboard Components &amp; Accs</a></li>
-                                                </ul>
-                                            </div>
-
-                                            <div class="col-xs-12 col-lg-4">
-                                                <ul>
-                                                    <li><a href="#">Power Supplies Power</a></li>
-                                                    <li><a href="#">Power Supply Testers Sound</a></li>
-                                                    <li><a href="#">Sound Cards (Internal)</a></li>
-                                                    <li><a href="#">Video Capture &amp; TV Tuner Cards</a></li>
-                                                    <li><a href="#">Other</a></li>
-                                                </ul>
-                                            </div>
-
-                                            <div class="dropdown-banner-holder">
-                                                <a href="#"><img alt="" src="assets/images/banners/banner-side.png" /></a>
-                                            </div>
-                                        </div>
-                                        <!-- ================================== MEGAMENU VERTICAL ================================== -->
-                                    </li>
-                                </ul>
-                            </li><!-- /.menu-item -->
-                            <li class="dropdown menu-item">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">玩具类</a>
-                                <ul class="dropdown-menu mega-menu">
-                                    <li class="yamm-content">
-                                        <!-- ================================== MEGAMENU VERTICAL ================================== -->
-                                        <div class="row">
-                                            <div class="col-xs-12 col-lg-4">
-                                                <ul>
-                                                    <li><a href="#">Computer Cases &amp; Accessories</a></li>
-                                                    <li><a href="#">CPUs, Processors</a></li>
-                                                    <li><a href="#">Fans, Heatsinks &amp; Cooling</a></li>
-                                                    <li><a href="#">Graphics, Video Cards</a></li>
-                                                    <li><a href="#">Interface, Add-On Cards</a></li>
-                                                    <li><a href="#">Laptop Replacement Parts</a></li>
-                                                    <li><a href="#">Memory (RAM)</a></li>
-                                                    <li><a href="#">Motherboards</a></li>
-                                                    <li><a href="#">Motherboard &amp; CPU Combos</a></li>
-                                                    <li><a href="#">Motherboard Components &amp; Accs</a></li>
-                                                </ul>
-                                            </div>
-
-                                            <div class="col-xs-12 col-lg-4">
-                                                <ul>
-                                                    <li><a href="#">Power Supplies Power</a></li>
-                                                    <li><a href="#">Power Supply Testers Sound</a></li>
-                                                    <li><a href="#">Sound Cards (Internal)</a></li>
-                                                    <li><a href="#">Video Capture &amp; TV Tuner Cards</a></li>
-                                                    <li><a href="#">Other</a></li>
-                                                </ul>
-                                            </div>
-
-                                            <div class="dropdown-banner-holder">
-                                                <a href="#"><img alt="" src="assets/images/banners/banner-side.png" /></a>
-                                            </div>
-                                        </div>
-                                        <!-- ================================== MEGAMENU VERTICAL ================================== -->                    </li>
-                                </ul>
-                            </li><!-- /.menu-item -->
-                            <li class="dropdown menu-item">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">智能家居</a>
-                                <ul class="dropdown-menu mega-menu">
-                                    <li class="yamm-content">
-                                        <!-- ================================== MEGAMENU VERTICAL ================================== -->
-                                        <div class="row">
-                                            <div class="col-xs-12 col-lg-4">
-                                                <ul>
-                                                    <li><a href="#">Computer Cases &amp; Accessories</a></li>
-                                                    <li><a href="#">CPUs, Processors</a></li>
-                                                    <li><a href="#">Fans, Heatsinks &amp; Cooling</a></li>
-                                                    <li><a href="#">Graphics, Video Cards</a></li>
-                                                    <li><a href="#">Interface, Add-On Cards</a></li>
-                                                    <li><a href="#">Laptop Replacement Parts</a></li>
-                                                    <li><a href="#">Memory (RAM)</a></li>
-                                                    <li><a href="#">Motherboards</a></li>
-                                                    <li><a href="#">Motherboard &amp; CPU Combos</a></li>
-                                                    <li><a href="#">Motherboard Components &amp; Accs</a></li>
-                                                </ul>
-                                            </div>
-
-                                            <div class="col-xs-12 col-lg-4">
-                                                <ul>
-                                                    <li><a href="#">Power Supplies Power</a></li>
-                                                    <li><a href="#">Power Supply Testers Sound</a></li>
-                                                    <li><a href="#">Sound Cards (Internal)</a></li>
-                                                    <li><a href="#">Video Capture &amp; TV Tuner Cards</a></li>
-                                                    <li><a href="#">Other</a></li>
-                                                </ul>
-                                            </div>
-
-                                            <div class="dropdown-banner-holder">
-                                                <a href="#"><img alt="" src="assets/images/banners/banner-side.png" /></a>
-                                            </div>
-                                        </div>
-                                        <!-- ================================== MEGAMENU VERTICAL ================================== -->
-                                    </li>
-                                </ul>
-                            </li><!-- /.menu-item -->
-                            <li class="dropdown menu-item">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">厨房厨具</a>
-                                <ul class="dropdown-menu mega-menu">
-                                    <li class="yamm-content">
-                                        <!-- ================================== MEGAMENU VERTICAL ================================== -->
-                                        <div class="row">
-                                            <div class="col-xs-12 col-lg-4">
-                                                <ul>
-                                                    <li><a href="#">Computer Cases &amp; Accessories</a></li>
-                                                    <li><a href="#">CPUs, Processors</a></li>
-                                                    <li><a href="#">Fans, Heatsinks &amp; Cooling</a></li>
-                                                    <li><a href="#">Graphics, Video Cards</a></li>
-                                                    <li><a href="#">Interface, Add-On Cards</a></li>
-                                                    <li><a href="#">Laptop Replacement Parts</a></li>
-                                                    <li><a href="#">Memory (RAM)</a></li>
-                                                    <li><a href="#">Motherboards</a></li>
-                                                    <li><a href="#">Motherboard &amp; CPU Combos</a></li>
-                                                    <li><a href="#">Motherboard Components &amp; Accs</a></li>
-                                                </ul>
-                                            </div>
-
-                                            <div class="col-xs-12 col-lg-4">
-                                                <ul>
-                                                    <li><a href="#">Power Supplies Power</a></li>
-                                                    <li><a href="#">Power Supply Testers Sound</a></li>
-                                                    <li><a href="#">Sound Cards (Internal)</a></li>
-                                                    <li><a href="#">Video Capture &amp; TV Tuner Cards</a></li>
-                                                    <li><a href="#">Other</a></li>
-                                                </ul>
-                                            </div>
-
-                                            <div class="dropdown-banner-holder">
-                                                <a href="#"><img alt="" src="assets/images/banners/banner-side.png" /></a>
-                                            </div>
-                                        </div>
-                                        <!-- ================================== MEGAMENU VERTICAL ================================== -->                    </li>
-                                </ul>
-                            </li><!-- /.menu-item -->
-                            <li class="dropdown menu-item">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">家居装潢</a>
-                                <ul class="dropdown-menu mega-menu">
-                                    <li class="yamm-content">
-                                        <!-- ================================== MEGAMENU VERTICAL ================================== -->
-                                        <div class="row">
-                                            <div class="col-xs-12 col-lg-4">
-                                                <ul>
-                                                    <li><a href="#">Computer Cases &amp; Accessories</a></li>
-                                                    <li><a href="#">CPUs, Processors</a></li>
-                                                    <li><a href="#">Fans, Heatsinks &amp; Cooling</a></li>
-                                                    <li><a href="#">Graphics, Video Cards</a></li>
-                                                    <li><a href="#">Interface, Add-On Cards</a></li>
-                                                    <li><a href="#">Laptop Replacement Parts</a></li>
-                                                    <li><a href="#">Memory (RAM)</a></li>
-                                                    <li><a href="#">Motherboards</a></li>
-                                                    <li><a href="#">Motherboard &amp; CPU Combos</a></li>
-                                                    <li><a href="#">Motherboard Components &amp; Accs</a></li>
-                                                </ul>
-                                            </div>
-
-                                            <div class="col-xs-12 col-lg-4">
-                                                <ul>
-                                                    <li><a href="#">Power Supplies Power</a></li>
-                                                    <li><a href="#">Power Supply Testers Sound</a></li>
-                                                    <li><a href="#">Sound Cards (Internal)</a></li>
-                                                    <li><a href="#">Video Capture &amp; TV Tuner Cards</a></li>
-                                                    <li><a href="#">Other</a></li>
-                                                </ul>
-                                            </div>
-
-                                            <div class="dropdown-banner-holder">
-                                                <a href="#"><img alt="" src="assets/images/banners/banner-side.png" /></a>
-                                            </div>
-                                        </div>
-                                        <!-- ================================== MEGAMENU VERTICAL ================================== -->
-                                    </li>
-                                </ul>
-                            </li><!-- /.menu-item -->
-                            <li class="dropdown menu-item">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">生鲜水果</a>
-                                <ul class="dropdown-menu mega-menu">
-                                    <li class="yamm-content">
-                                        <!-- ================================== MEGAMENU VERTICAL ================================== -->
-                                        <div class="row">
-                                            <div class="col-xs-12 col-lg-4">
-                                                <ul>
-                                                    <li><a href="#">Computer Cases &amp; Accessories</a></li>
-                                                    <li><a href="#">CPUs, Processors</a></li>
-                                                    <li><a href="#">Fans, Heatsinks &amp; Cooling</a></li>
-                                                    <li><a href="#">Graphics, Video Cards</a></li>
-                                                    <li><a href="#">Interface, Add-On Cards</a></li>
-                                                    <li><a href="#">Laptop Replacement Parts</a></li>
-                                                    <li><a href="#">Memory (RAM)</a></li>
-                                                    <li><a href="#">Motherboards</a></li>
-                                                    <li><a href="#">Motherboard &amp; CPU Combos</a></li>
-                                                    <li><a href="#">Motherboard Components &amp; Accs</a></li>
-                                                </ul>
-                                            </div>
-
-                                            <div class="col-xs-12 col-lg-4">
-                                                <ul>
-                                                    <li><a href="#">Power Supplies Power</a></li>
-                                                    <li><a href="#">Power Supply Testers Sound</a></li>
-                                                    <li><a href="#">Sound Cards (Internal)</a></li>
-                                                    <li><a href="#">Video Capture &amp; TV Tuner Cards</a></li>
-                                                    <li><a href="#">Other</a></li>
-                                                </ul>
-                                            </div>
-
-                                            <div class="dropdown-banner-holder">
-                                                <a href="#"><img alt="" src="assets/images/banners/banner-side.png" /></a>
-                                            </div>
-                                        </div>
-                                        <!-- ================================== MEGAMENU VERTICAL ================================== -->                    </li>
-                                </ul>
-                            </li><!-- /.menu-item -->
-                            <li class="dropdown menu-item">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">床上用品</a>
-                                <ul class="dropdown-menu mega-menu">
-                                    <li class="yamm-content">
-                                        <!-- ================================== MEGAMENU VERTICAL ================================== -->
-                                        <div class="row">
-                                            <div class="col-xs-12 col-lg-4">
-                                                <ul>
-                                                    <li><a href="#">Computer Cases &amp; Accessories</a></li>
-                                                    <li><a href="#">CPUs, Processors</a></li>
-                                                    <li><a href="#">Fans, Heatsinks &amp; Cooling</a></li>
-                                                    <li><a href="#">Graphics, Video Cards</a></li>
-                                                    <li><a href="#">Interface, Add-On Cards</a></li>
-                                                    <li><a href="#">Laptop Replacement Parts</a></li>
-                                                    <li><a href="#">Memory (RAM)</a></li>
-                                                    <li><a href="#">Motherboards</a></li>
-                                                    <li><a href="#">Motherboard &amp; CPU Combos</a></li>
-                                                    <li><a href="#">Motherboard Components &amp; Accs</a></li>
-                                                </ul>
-                                            </div>
-
-                                            <div class="col-xs-12 col-lg-4">
-                                                <ul>
-                                                    <li><a href="#">Power Supplies Power</a></li>
-                                                    <li><a href="#">Power Supply Testers Sound</a></li>
-                                                    <li><a href="#">Sound Cards (Internal)</a></li>
-                                                    <li><a href="#">Video Capture &amp; TV Tuner Cards</a></li>
-                                                    <li><a href="#">Other</a></li>
-                                                </ul>
-                                            </div>
-
-                                            <div class="dropdown-banner-holder">
-                                                <a href="#"><img alt="" src="assets/images/banners/banner-side.png" /></a>
-                                            </div>
-                                        </div>
-                                        <!-- ================================== MEGAMENU VERTICAL ================================== -->                    </li>
-                                </ul>
-                            </li><!-- /.menu-item -->
-                            <li class="dropdown menu-item">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">书籍</a>
-                                <ul class="dropdown-menu mega-menu">
-                                    <li class="yamm-content">
-                                        <!-- ================================== MEGAMENU VERTICAL ================================== -->
-                                        <div class="row">
-                                            <div class="col-xs-12 col-lg-4">
-                                                <ul>
-                                                    <li><a href="#">Computer Cases &amp; Accessories</a></li>
-                                                    <li><a href="#">CPUs, Processors</a></li>
-                                                    <li><a href="#">Fans, Heatsinks &amp; Cooling</a></li>
-                                                    <li><a href="#">Graphics, Video Cards</a></li>
-                                                    <li><a href="#">Interface, Add-On Cards</a></li>
-                                                    <li><a href="#">Laptop Replacement Parts</a></li>
-                                                    <li><a href="#">Memory (RAM)</a></li>
-                                                    <li><a href="#">Motherboards</a></li>
-                                                    <li><a href="#">Motherboard &amp; CPU Combos</a></li>
-                                                    <li><a href="#">Motherboard Components &amp; Accs</a></li>
-                                                </ul>
-                                            </div>
-
-                                            <div class="col-xs-12 col-lg-4">
-                                                <ul>
-                                                    <li><a href="#">Power Supplies Power</a></li>
-                                                    <li><a href="#">Power Supply Testers Sound</a></li>
-                                                    <li><a href="#">Sound Cards (Internal)</a></li>
-                                                    <li><a href="#">Video Capture &amp; TV Tuner Cards</a></li>
-                                                    <li><a href="#">Other</a></li>
-                                                </ul>
-                                            </div>
-
-                                            <div class="dropdown-banner-holder">
-                                                <a href="#"><img alt="" src="assets/images/banners/banner-side.png" /></a>
-                                            </div>
-                                        </div>
-                                        <!-- ================================== MEGAMENU VERTICAL ================================== -->                    </li>
-                                </ul>
-                            </li><!-- /.menu-item -->
+                                <?php endforeach;?>
                             <!--<li><a href="http://themeforest.net/item/media-center-electronic-ecommerce-html-template/8178892?ref=shaikrilwan">Buy this Theme</a></li>-->
                         </ul><!-- /.nav -->
                     </nav><!-- /.megamenu-horizontal -->
@@ -462,113 +139,36 @@
                 <div class="tab-content">
                     <div class="tab-pane active" id="featured">
                         <div class="product-grid-holder">
+                            <?php foreach ($data['tui'] as $pro):?>
                             <div class="col-sm-4 col-md-3  no-margin product-item-holder hover">
                                 <div class="product-item">
-                                    <div class="ribbon red"><span>sale</span></div>
+                                    <?php if ($pro->ishot):?>
+                                    <div class="ribbon red"><span>HOT</span></div>
+                                    <?php endif;?>
+                                    <?php if ($pro->issale):?>
+                                        <div class="ribbon red"><span>sale</span></div>
+                                    <?php endif;?>
                                     <div class="image">
-                                        <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-01.jpg" />
+                                        <img alt="<?php echo $pro->title ?>" src="<?php echo $pro->cover ?>-covermiddle" data-echo="<?php echo $pro->cover ?>-covermiddle" />
                                     </div>
                                     <div class="body">
-                                        <div class="label-discount green">-50% sale</div>
                                         <div class="title">
-                                            <a href="single-product.html">VAIO Fit Laptop - Windows 8 SVF14322CXW</a>
+                                            <a href="<?php echo yii\helpers\Url::to(['product/detail', 'productid' => $pro->productid]) ?>"><?php echo $pro->title ?></a>
                                         </div>
-                                        <div class="brand">sony</div>
                                     </div>
                                     <div class="prices">
-                                        <div class="price-prev">￥1399.00</div>
-                                        <div class="price-current pull-right">￥1199.00</div>
+                                        <div class="price-prev">￥<?php echo $pro->price ?></div>
+                                        <div class="price-current pull-right">￥<?php echo $pro->saleprice ?></div>
                                     </div>
 
                                     <div class="hover-area">
                                         <div class="add-cart-button">
-                                            <a href="single-product.html" class="le-button">加入购物车</a>
+                                            <a href="<?php echo yii\helpers\Url::to(['cart/add', 'productid' => $pro->productid]) ?>" class="le-button">加入购物车</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-4 col-md-3 no-margin product-item-holder hover">
-                                <div class="product-item">
-                                    <div class="ribbon blue"><span>new!</span></div>
-                                    <div class="image">
-                                        <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-02.jpg" />
-                                    </div>
-                                    <div class="body">
-                                        <div class="label-discount clear"></div>
-                                        <div class="title">
-                                            <a href="single-product.html">White lumia 9001</a>
-                                        </div>
-                                        <div class="brand">nokia</div>
-                                    </div>
-                                    <div class="prices">
-                                        <div class="price-prev">￥1399.00</div>
-                                        <div class="price-current pull-right">￥1199.00</div>
-                                    </div>
-                                    <div class="hover-area">
-                                        <div class="add-cart-button">
-                                            <a href="single-product.html" class="le-button">加入购物车</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4 col-md-3 no-margin product-item-holder hover">
-                                <div class="product-item">
-
-                                    <div class="image">
-                                        <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-03.jpg" />
-                                    </div>
-                                    <div class="body">
-                                        <div class="label-discount clear"></div>
-                                        <div class="title">
-                                            <a href="single-product.html">POV Action Cam</a>
-                                        </div>
-                                        <div class="brand">sony</div>
-                                    </div>
-                                    <div class="prices">
-                                        <div class="price-prev">￥1399.00</div>
-                                        <div class="price-current pull-right">￥1199.00</div>
-                                    </div>
-                                    <div class="hover-area">
-                                        <div class="add-cart-button">
-                                            <a href="single-product.html" class="le-button">加入购物车</a>
-                                        </div>
-                                        <div class="wish-compare">
-                                            <a class="btn-add-to-wishlist" href="#">add to wishlist</a>
-                                            <a class="btn-add-to-compare" href="#">compare</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4 col-md-3 no-margin product-item-holder hover">
-                                <div class="product-item">
-                                    <div class="ribbon red"><span>sale</span></div>
-                                    <div class="ribbon green"><span>bestseller</span></div>
-                                    <div class="image">
-                                        <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-04.jpg" />
-                                    </div>
-                                    <div class="body">
-                                        <div class="label-discount clear"></div>
-                                        <div class="title">
-                                            <a href="single-product.html">Netbook Acer TravelMate
-                                                B113-E-10072</a>
-                                        </div>
-                                        <div class="brand">acer</div>
-                                    </div>
-                                    <div class="prices">
-                                        <div class="price-prev">￥1399.00</div>
-                                        <div class="price-current pull-right">￥1199.00</div>
-                                    </div>
-                                    <div class="hover-area">
-                                        <div class="add-cart-button">
-                                            <a href="single-product.html" class="le-button">加入购物车</a>
-                                        </div>
-                                        <div class="wish-compare">
-                                            <a class="btn-add-to-wishlist" href="#">add to wishlist</a>
-                                            <a class="btn-add-to-compare" href="#">compare</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php endforeach;?>
                         </div>
                         <div class="loadmore-holder text-center">
                             <a class="btn-loadmore" href="#">
@@ -579,126 +179,36 @@
                     </div>
                     <div class="tab-pane" id="new-arrivals">
                         <div class="product-grid-holder">
-
+                            <?php foreach ($data['new'] as $pro):?>
                             <div class="col-sm-4 col-md-3 no-margin product-item-holder hover">
                                 <div class="product-item">
-                                    <div class="ribbon blue"><span>new!</span></div>
+                                    <?php if ($pro->ishot): ?>
+                                        <div class="ribbon red"><span>HOT</span></div>
+                                    <?php endif; ?>
+                                    <?php if ($pro->issale): ?>
+                                        <div class="ribbon green"><span>sale</span></div>
+                                    <?php endif; ?>
                                     <div class="image">
-                                        <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-02.jpg" />
+                                        <img alt="<?php echo $pro->title ?>" src="<?php echo $pro->cover ?>-covermiddle" data-echo="<?php echo $pro->cover ?>-covermiddle" />
                                     </div>
                                     <div class="body">
                                         <div class="label-discount clear"></div>
                                         <div class="title">
-                                            <a href="single-product.html">White lumia 9001</a>
+                                            <a href="<?php echo yii\helpers\Url::to(['product/detail', 'productid' => $pro->productid]) ?>"><?php echo $pro->title ?></a>
                                         </div>
-                                        <div class="brand">nokia</div>
                                     </div>
                                     <div class="prices">
-                                        <div class="price-prev">￥1399.00</div>
-                                        <div class="price-current pull-right">￥1199.00</div>
+                                        <div class="price-prev">￥<?php echo $pro->price ?></div>
+                                        <div class="price-current pull-right">￥<?php echo $pro->saleprice ?></div>
                                     </div>
                                     <div class="hover-area">
                                         <div class="add-cart-button">
-                                            <a href="single-product.html" class="le-button">加入购物车</a>
-                                        </div>
-                                        <div class="wish-compare">
-                                            <a class="btn-add-to-wishlist" href="#">add to wishlist</a>
-                                            <a class="btn-add-to-compare" href="#">compare</a>
+                                            <a href="<?php echo yii\helpers\Url::to(['cart/add', 'productid' => $pro->productid]) ?>" class="le-button">加入购物车</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="col-sm-4 col-md-3 no-margin product-item-holder hover">
-                                <div class="product-item">
-                                    <div class="ribbon red"><span>sale</span></div>
-                                    <div class="image">
-                                        <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-01.jpg" />
-                                    </div>
-                                    <div class="body">
-                                        <div class="label-discount green">-50% sale</div>
-                                        <div class="title">
-                                            <a href="single-product.html">VAIO Fit Laptop - Windows 8 SVF14322CXW</a>
-                                        </div>
-                                        <div class="brand">sony</div>
-                                    </div>
-                                    <div class="prices">
-                                        <div class="price-prev">￥1399.00</div>
-                                        <div class="price-current pull-right">￥1199.00</div>
-                                    </div>
-
-                                    <div class="hover-area">
-                                        <div class="add-cart-button">
-                                            <a href="single-product.html" class="le-button">加入购物车</a>
-                                        </div>
-                                        <div class="wish-compare">
-                                            <a class="btn-add-to-wishlist" href="#">add to wishlist</a>
-                                            <a class="btn-add-to-compare" href="#">compare</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-4 col-md-3 no-margin product-item-holder hover">
-                                <div class="product-item">
-                                    <div class="ribbon red"><span>sale</span></div>
-                                    <div class="ribbon green"><span>bestseller</span></div>
-                                    <div class="image">
-                                        <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-04.jpg" />
-                                    </div>
-                                    <div class="body">
-                                        <div class="label-discount clear"></div>
-                                        <div class="title">
-                                            <a href="single-product.html">Netbook Acer TravelMate
-                                                B113-E-10072</a>
-                                        </div>
-                                        <div class="brand">acer</div>
-                                    </div>
-                                    <div class="prices">
-                                        <div class="price-prev">￥1399.00</div>
-                                        <div class="price-current pull-right">￥1199.00</div>
-                                    </div>
-                                    <div class="hover-area">
-                                        <div class="add-cart-button">
-                                            <a href="single-product.html" class="le-button">加入购物车</a>
-                                        </div>
-                                        <div class="wish-compare">
-                                            <a class="btn-add-to-wishlist" href="#">add to wishlist</a>
-                                            <a class="btn-add-to-compare" href="#">compare</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-4 col-md-3 no-margin product-item-holder hover">
-                                <div class="product-item">
-
-                                    <div class="image">
-                                        <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-03.jpg" />
-                                    </div>
-                                    <div class="body">
-                                        <div class="label-discount clear"></div>
-                                        <div class="title">
-                                            <a href="single-product.html">POV Action Cam</a>
-                                        </div>
-                                        <div class="brand">sony</div>
-                                    </div>
-                                    <div class="prices">
-                                        <div class="price-prev">￥1399.00</div>
-                                        <div class="price-current pull-right">￥1199.00</div>
-                                    </div>
-                                    <div class="hover-area">
-                                        <div class="add-cart-button">
-                                            <a href="single-product.html" class="le-button">加入购物车</a>
-                                        </div>
-                                        <div class="wish-compare">
-                                            <a class="btn-add-to-wishlist" href="#">add to wishlist</a>
-                                            <a class="btn-add-to-compare" href="#">compare</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
+                            <?php endforeach;?>
                         </div>
                         <div class="loadmore-holder text-center">
                             <a class="btn-loadmore" href="#">
@@ -710,123 +220,37 @@
 
                     <div class="tab-pane" id="top-sales">
                         <div class="product-grid-holder">
-
+                            <?php foreach ($data['hot'] as $pro):?>
                             <div class="col-sm-4 col-md-3 no-margin product-item-holder hover">
                                 <div class="product-item">
-                                    <div class="ribbon red"><span>sale</span></div>
-                                    <div class="ribbon green"><span>bestseller</span></div>
+                                    <?php if ($pro->ishot): ?>
+                                        <div class="ribbon red"><span>HOT</span></div>
+                                    <?php endif; ?>
+                                    <?php if ($pro->issale): ?>
+                                        <div class="ribbon green"><span>sale</span></div>
+                                    <?php endif; ?>
                                     <div class="image">
-                                        <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-04.jpg" />
+                                        <img alt="<?php echo $pro->title?>" src="<?php echo $pro->cover ?>-covermiddle" data-echo="<?php echo $pro->cover ?>-covermiddle" />
                                     </div>
                                     <div class="body">
                                         <div class="label-discount clear"></div>
                                         <div class="title">
-                                            <a href="single-product.html">Netbook Acer TravelMate
-                                                B113-E-10072</a>
+                                            <a href="<?php echo yii\helpers\Url::to(['product/detail', 'productid' => $pro->productid]) ?>"><?php echo $pro->title ?></a>
                                         </div>
                                         <div class="brand">acer</div>
                                     </div>
                                     <div class="prices">
-                                        <div class="price-prev">￥1399.00</div>
-                                        <div class="price-current pull-right">￥1199.00</div>
+                                        <div class="price-prev">￥<?php echo $pro->price ?></div>
+                                        <div class="price-current pull-right">￥<?php echo $pro->saleprice ?></div>
                                     </div>
                                     <div class="hover-area">
                                         <div class="add-cart-button">
-                                            <a href="single-product.html" class="le-button">加入购物车</a>
-                                        </div>
-                                        <div class="wish-compare">
-                                            <a class="btn-add-to-wishlist" href="#">add to wishlist</a>
-                                            <a class="btn-add-to-compare" href="#">compare</a>
+                                            <a href="<?php echo yii\helpers\Url::to(['cart/add', 'productid' => $pro->productid]) ?>" class="le-button">加入购物车</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-
-                            <div class="col-sm-4 col-md-3 no-margin product-item-holder hover">
-                                <div class="product-item">
-
-                                    <div class="image">
-                                        <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-03.jpg" />
-                                    </div>
-                                    <div class="body">
-                                        <div class="label-discount clear"></div>
-                                        <div class="title">
-                                            <a href="single-product.html">POV Action Cam</a>
-                                        </div>
-                                        <div class="brand">sony</div>
-                                    </div>
-                                    <div class="prices">
-                                        <div class="price-prev">￥1399.00</div>
-                                        <div class="price-current pull-right">￥1199.00</div>
-                                    </div>
-                                    <div class="hover-area">
-                                        <div class="add-cart-button">
-                                            <a href="single-product.html" class="le-button">加入购物车</a>
-                                        </div>
-                                        <div class="wish-compare">
-                                            <a class="btn-add-to-wishlist" href="#">add to wishlist</a>
-                                            <a class="btn-add-to-compare" href="#">compare</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-4 col-md-3 no-margin product-item-holder hover">
-                                <div class="product-item">
-                                    <div class="ribbon blue"><span>new!</span></div>
-                                    <div class="image">
-                                        <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-02.jpg" />
-                                    </div>
-                                    <div class="body">
-                                        <div class="label-discount clear"></div>
-                                        <div class="title">
-                                            <a href="single-product.html">White lumia 9001</a>
-                                        </div>
-                                        <div class="brand">nokia</div>
-                                    </div>
-                                    <div class="prices">
-                                        <div class="price-prev">￥1399.00</div>
-                                        <div class="price-current pull-right">￥1199.00</div>
-                                    </div>
-                                    <div class="hover-area">
-                                        <div class="add-cart-button">
-                                            <a href="single-product.html" class="le-button">加入购物车</a>
-                                        </div>
-                                        <div class="wish-compare">
-                                            <a class="btn-add-to-wishlist" href="#">add to wishlist</a>
-                                            <a class="btn-add-to-compare" href="#">compare</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-4 col-md-3 no-margin product-item-holder hover">
-                                <div class="product-item">
-                                    <div class="ribbon red"><span>sale</span></div>
-                                    <div class="image">
-                                        <img alt="" src="assets/images/blank.gif" data-echo="assets/images/products/product-01.jpg" />
-                                    </div>
-                                    <div class="body">
-                                        <div class="label-discount green">-50% sale</div>
-                                        <div class="title">
-                                            <a href="single-product.html">VAIO Fit Laptop - Windows 8 SVF14322CXW</a>
-                                        </div>
-                                        <div class="brand">sony</div>
-                                    </div>
-                                    <div class="prices">
-                                        <div class="price-prev">￥1399.00</div>
-                                        <div class="price-current pull-right">￥1199.00</div>
-                                    </div>
-
-                                    <div class="hover-area">
-                                        <div class="add-cart-button">
-                                            <a href="single-product.html" class="le-button">加入购物车</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
+                            <?php endforeach;?>
                         </div>
                         <div class="loadmore-holder text-center">
                             <a class="btn-loadmore" href="#">
