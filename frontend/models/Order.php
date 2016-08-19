@@ -28,8 +28,6 @@ class Order extends ActiveRecord
     ];
 
     public function getDetail($data){
-        foreach ($data){
 
-        }
     }
 }
