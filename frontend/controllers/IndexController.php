@@ -17,6 +17,7 @@ class IndexController extends CommonController
     public $layout = false;
 
     public function actionIndex(){
+        $this->layout = 'layoutindex';
         $data['tui'] = Product::find()->where('istui = "1" and ison = "1"')->orderby('createtime desc')->limit(4)->all();
         $data['new'] = Product::find()->where('ison = "1"')->orderby('createtime desc')->limit(4)->all();
         $data['hot'] = Product::find()->where('ison = "1" and ishot = "1"')->orderby('createtime desc')->limit(4)->all();
